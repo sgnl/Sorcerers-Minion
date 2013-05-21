@@ -8,21 +8,28 @@
 <% end %>
 
 <% if @missions.each do |mission| %>
-<table class="missions"
-  <tr class="row-head">
-    <td><%= mission.name %></td>
-    <td><%= mission.monster %></td>
-    <td><%= mission.monster_weakness %></td>
-    <td><%= mission.reward_1 %></td>
-    <td><%= mission.reward_2 %></td>
-    <td><%= mission.reward_3 %></td>
-    <td><%= mission.drop_1 %></td>
-    <td><%= mission.drop_2 %></td>
-    <td><%= link_to 'Show', mission %></td>
-    <td><%= link_to 'Edit', edit_mission_path(mission) %></td>
-    <td><%= link_to 'Destroy', mission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <table class="missions">
+    <tr class="tr-head">
+      <%= mission.name %>
+    </tr>
+    <tr class="tr-desc">
+      <td>
+        <p><%= mission.monster %> <br />
+        weakness: <%= mission.monster_weakness %>
+      <br />breakable drops:<li><ul><%= mission.drop_1 %></ul>
+                                <ul><%= mission.drop_2 %></ul>
+                             </li>
+      </td>
+      <td>1: <%= mission.reward_1 %> <br />
+          2: <%= mission.reward_2 %> <br />
+          3: <%= mission.reward_3 %>
+      </td>
   </tr>
 </table>
+    <%= link_to 'Show', mission %>
+    <%= link_to 'Edit', edit_mission_path(mission) %>
+    <%= link_to 'Destroy', mission, method: :delete, data: { confirm: 'Are you sure?' } %>
+<p></p>
 <% end.empty? %>
   <table>
     <tr>Try searching for an Offering.</tr>
