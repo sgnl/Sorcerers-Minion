@@ -10,7 +10,7 @@ class MissionsController < ApplicationController
       @missions = @search
     end
 
-    @products
+    @missions
 
 
     respond_to do |format|
