@@ -1,22 +1,13 @@
-<h1>Listing missions</h1>
+<h1>Admin Page!</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Monster</th>
-    <th>Monster weakness</th>
-    <th>Reward 1</th>
-    <th>Reward 2</th>
-    <th>Reward 3</th>
-    <th>Drop 1</th>
-    <th>Drop 2</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-</table>
+<%= form_tag missions_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
 
-<% @missions.each do |mission| %>
+<% if @missions.each do |mission| %>
 <table class="missions"
   <tr class="row-head">
     <td><%= mission.name %></td>
@@ -32,8 +23,11 @@
     <td><%= link_to 'Destroy', mission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 </table>
+<% end.empty? %>
+  <table>
+    <tr>Try searching for an Offering.</tr>
+  </table>
 <% end %>
-
 <br />
 
 <%= link_to 'New Mission', new_mission_path %>

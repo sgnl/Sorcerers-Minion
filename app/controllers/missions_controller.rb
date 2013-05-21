@@ -2,7 +2,16 @@ class MissionsController < ApplicationController
   # GET /missions
   # GET /missions.json
   def index
-    @missions = Mission.all
+    @missions = []
+    # Mission.search(params[:search])
+
+    unless params[:search].nil? || params[:search].strip.empty?
+      @search = Mission.search(params[:search])
+      @missions = @search
+    end
+
+    @products
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -84,6 +93,6 @@ class MissionsController < ApplicationController
 
   def import
       Mission.import(params[:file])
-  redirect_to root_url, notice: "Products imported."
+    redirect_to root_url, notice: "Missions imported."
   end
 end
