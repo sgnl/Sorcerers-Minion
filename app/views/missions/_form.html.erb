@@ -1,0 +1,49 @@
+<%= form_for(@mission) do |f| %>
+  <% if @mission.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mission.errors.count, "error") %> prohibited this mission from being saved:</h2>
+
+      <ul>
+      <% @mission.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :monster %><br />
+    <%= f.text_field :monster %>
+  </div>
+  <div class="field">
+    <%= f.label :monster_weakness %><br />
+    <%= f.text_field :monster_weakness %>
+  </div>
+  <div class="field">
+    <%= f.label :reward_1 %><br />
+    <%= f.text_field :reward_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :reward_2 %><br />
+    <%= f.text_field :reward_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :reward_3 %><br />
+    <%= f.text_field :reward_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :drop_1 %><br />
+    <%= f.text_field :drop_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :drop_2 %><br />
+    <%= f.text_field :drop_2 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,4 +1,11 @@
 SoulSac2::Application.routes.draw do
+  resources :missions do
+    collection { post :import } 
+  end
+
+  root to: 'missions#index'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

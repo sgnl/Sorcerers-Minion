@@ -1,0 +1,55 @@
+<h1>Listing missions</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Monster</th>
+    <th>Monster weakness</th>
+    <th>Reward 1</th>
+    <th>Reward 2</th>
+    <th>Reward 3</th>
+    <th>Drop 1</th>
+    <th>Drop 2</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</table>
+
+<% @missions.each do |mission| %>
+<table class="missions"
+  <tr class="row-head">
+    <td><%= mission.name %></td>
+    <td><%= mission.monster %></td>
+    <td><%= mission.monster_weakness %></td>
+    <td><%= mission.reward_1 %></td>
+    <td><%= mission.reward_2 %></td>
+    <td><%= mission.reward_3 %></td>
+    <td><%= mission.drop_1 %></td>
+    <td><%= mission.drop_2 %></td>
+    <td><%= link_to 'Show', mission %></td>
+    <td><%= link_to 'Edit', edit_mission_path(mission) %></td>
+    <td><%= link_to 'Destroy', mission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+</table>
+<% end %>
+
+<br />
+
+<%= link_to 'New Mission', new_mission_path %>
+
+<!-- <p>
+  Download:
+  <%= link_to "CSV", missions_path(format: "csv") %>
+</p> -->
+
+
+<p>
+<h2>Import Products</h2>
+
+<%= form_tag import_missions_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+</p>
+

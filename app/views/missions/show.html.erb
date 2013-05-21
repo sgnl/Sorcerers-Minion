@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @mission.name %>
+</p>
+
+<p>
+  <b>Monster:</b>
+  <%= @mission.monster %>
+</p>
+
+<p>
+  <b>Monster weakness:</b>
+  <%= @mission.monster_weakness %>
+</p>
+
+<p>
+  <b>Reward 1:</b>
+  <%= @mission.reward_1 %>
+</p>
+
+<p>
+  <b>Reward 2:</b>
+  <%= @mission.reward_2 %>
+</p>
+
+<p>
+  <b>Reward 3:</b>
+  <%= @mission.reward_3 %>
+</p>
+
+<p>
+  <b>Drop 1:</b>
+  <%= @mission.drop_1 %>
+</p>
+
+<p>
+  <b>Drop 2:</b>
+  <%= @mission.drop_2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_mission_path(@mission) %> |
+<%= link_to 'Back', missions_path %>
