@@ -1,9 +1,16 @@
 SoulSac2::Application.routes.draw do
+  # get "portal_pages/home"
+
+  # get "portal_pages/contact"
+
+  # get "portal_pages/rewards"
+
   resources :missions do
     collection { post :import } 
   end
 
-  root to: 'missions#index'
+  root to: 'Portal_pages#home'
+  match '/rewards' => 'Portal_pages#rewards'
 
 
   # The priority is based upon order of creation:

@@ -15,8 +15,8 @@ class MissionsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
+      format.csv { render :text => Mission.to_csv }
       format.json { render json: @missions }
-      # format.csv { send_data @missions.to_csv }
     end
   end
 

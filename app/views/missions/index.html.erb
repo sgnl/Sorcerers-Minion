@@ -10,21 +10,27 @@
 <% if @missions.each do |mission| %>
   <table class="missions">
     <tr class="tr-head">
-      <%= mission.name %>
-    </tr>
-    <tr class="tr-desc">
       <td>
-        <p><%= mission.monster %> <br />
-        weakness: <%= mission.monster_weakness %>
-      <br />breakable drops:<li><ul><%= mission.drop_1 %></ul>
-                                <ul><%= mission.drop_2 %></ul>
-                             </li>
+        <%= mission.name %>
+      </td>
+    </tr>
+    <tr class="tr-desc1">
+      <td>
+        <p><%= mission.monster %>
+      </td>
+      <td>
+        <p>Weakness: <%= mission.monster_weakness %></p>
+      </td>
+    </tr>
+    <tr class="tr-desc2">
+      <td>Breakable drops:  <%= mission.drop_1 %>
+                            <%= mission.drop_2 %>
       </td>
       <td>1: <%= mission.reward_1 %> <br />
           2: <%= mission.reward_2 %> <br />
           3: <%= mission.reward_3 %>
       </td>
-  </tr>
+    </tr>
 </table>
     <%= link_to 'Show', mission %>
     <%= link_to 'Edit', edit_mission_path(mission) %>
@@ -37,13 +43,14 @@
 <% end %>
 <br />
 
-<%= link_to 'New Mission', new_mission_path %>
-
 <!-- <p>
   Download:
   <%= link_to "CSV", missions_path(format: "csv") %>
 </p> -->
-
+<p>
+  Download:
+  <%= link_to "CSV", missions_path(format: "csv") %>
+</p>
 
 <p>
 <h2>Import Products</h2>
