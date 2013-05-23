@@ -9,7 +9,7 @@ SoulSac2::Application.routes.draw do
     collection { post :import } 
   end
 
-  root to: 'Portal_pages#home'
+  root to: 'missions#index'
   match '/rewards' => 'Portal_pages#rewards'
 
 
