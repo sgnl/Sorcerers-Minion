@@ -40,18 +40,18 @@
   </table>
 <% end %>
 <br />
-
-<h1>Admin Section!</h1>
-<p>
-<h2>Download:</h2>
+<% if signed_in? %>
+  <h1>Admin Section!</h1>
+  <p>
+  <h2>Download:</h2>
   <%= link_to "CSV", missions_path(format: "csv") %>
-</p>
+  </p>
 
-<p>
-<h2>Import</h2>
-<%= form_tag import_missions_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import" %>
-<% end %>
-</p>
-
+  <p>
+  <h2>Import</h2>
+    <%= form_tag import_missions_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import" %>
+    <% end %>
+  </p>
+  <% end %>
