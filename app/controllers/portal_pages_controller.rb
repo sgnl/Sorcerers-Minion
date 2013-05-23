@@ -6,20 +6,11 @@ class PortalPagesController < ApplicationController
   end
 
   def rewards
-  	@missions = []
+  end
 
-    unless params[:search].nil? || params[:search].strip.empty?
-      @search = Mission.search(params[:search])
-      @missions = @search
-    end
+  def about
+  end
 
-    @missions
-
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.csv { render :text => Mission.to_csv }
-      format.json { render json: @missions }
-    end
+  def update
   end
 end

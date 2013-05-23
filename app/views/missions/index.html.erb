@@ -30,13 +30,15 @@
       </td>
     </tr>
 </table>
-    <%= link_to 'Show', mission %>
-    <%= link_to 'Edit', edit_mission_path(mission) %>
-    <%= link_to 'Destroy', mission, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Show', mission if signed_in? %>
+    <%= link_to 'Edit', edit_mission_path(mission) if signed_in? %>
+    <%= link_to 'Destroy', mission, method: :delete, 
+                data: { confirm: 'Are you sure?' } if signed_in? %>
 <p></p>
 <% end.empty? %>
   <table>
-    <tr>Try searching for an Offering.</tr>
+    <tr>Try searching for an Offering. For Example: "Healing" or "Monsterip". <br />
+        Searches are not case-sensitive. Please pardon the rough edges, Beta!</tr>
   </table>
 <% end %>
 <br />
