@@ -12,8 +12,3 @@
  *= require_tree .
  */
 
-.tb-missions tr {
-  border-collapse: collapse;
-  border: 1px solid black;
-
-}

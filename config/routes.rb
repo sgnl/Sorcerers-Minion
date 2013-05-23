@@ -1,4 +1,6 @@
 SoulSac2::Application.routes.draw do
+  get "users/new"
+
   # get "portal_pages/home"
 
   # get "portal_pages/contact"
