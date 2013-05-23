@@ -10,7 +10,7 @@ SoulSac2::Application.routes.draw do
   end
 
   root to: 'missions#index'
-  match '/rewards' => 'Portal_pages#rewards'
+  
 
 
   # The priority is based upon order of creation:

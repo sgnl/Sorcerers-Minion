@@ -1,5 +1,3 @@
-<h1>Admin Page!</h1>
-
 <%= form_tag missions_path, :method => 'get' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
@@ -8,7 +6,7 @@
 <% end %>
 
 <% if @missions.each do |mission| %>
-  <table class="missions">
+  <table class="tb-missions">
     <tr class="tr-head">
       <td>
         <%= mission.name %>
@@ -16,7 +14,7 @@
     </tr>
     <tr class="tr-desc1">
       <td>
-        <p><%= mission.monster %>
+        <p><%= mission.monster %></p>
       </td>
       <td>
         <p>Weakness: <%= mission.monster_weakness %></p>
@@ -43,18 +41,14 @@
 <% end %>
 <br />
 
-<!-- <p>
-  Download:
-  <%= link_to "CSV", missions_path(format: "csv") %>
-</p> -->
+<h1>Admin Section!</h1>
 <p>
-  Download:
+<h2>Download:</h2>
   <%= link_to "CSV", missions_path(format: "csv") %>
 </p>
 
 <p>
-<h2>Import Products</h2>
-
+<h2>Import</h2>
 <%= form_tag import_missions_path, multipart: true do %>
   <%= file_field_tag :file %>
   <%= submit_tag "Import" %>

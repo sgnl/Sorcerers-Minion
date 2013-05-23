@@ -1,2 +1,40 @@
-<h1>PortalPages#rewards</h1>
-<p>Find me in app/views/portal_pages/rewards.html.erb</p>
+<%= form_tag missions_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<% if @missions.each do |mission| %>
+  <table class="tb-missions">
+    <tr class="tr-head">
+      <td>
+        <%= mission.name %>
+      </td>
+    </tr>
+    <tr class="tr-desc1">
+      <td>
+        <p><%= mission.monster %></p>
+      </td>
+      <td>
+        <p>Weakness: <%= mission.monster_weakness %></p>
+      </td>
+    </tr>
+    <tr class="tr-desc2">
+      <td>Breakable drops:  <%= mission.drop_1 %>
+                            <%= mission.drop_2 %>
+      </td>
+      <td>1: <%= mission.reward_1 %> <br />
+          2: <%= mission.reward_2 %> <br />
+          3: <%= mission.reward_3 %>
+      </td>
+    </tr>
+</table>
+
+<% end.empty? %>
+  <table>
+    <tr>Try searching for an Offering.</tr>
+  </table>
+<% end %>
+<br />
+
