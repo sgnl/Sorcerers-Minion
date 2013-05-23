@@ -1,17 +1,18 @@
 SoulSac2::Application.routes.draw do
-  get "users/new"
-
-  # get "portal_pages/home"
-
-  # get "portal_pages/contact"
-
-  # get "portal_pages/rewards"
+  resources :users
 
   resources :missions do
     collection { post :import } 
   end
 
   root to: 'missions#index'
+  match '/signup' => 'users#new'
+
+  # get "portal_pages/home"
+
+  # get "portal_pages/contact"
+
+  # get "portal_pages/rewards"
   
 
 
