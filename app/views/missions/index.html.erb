@@ -8,25 +8,30 @@
 <% if @missions.each do |mission| %>
   <table class="tb-missions">
     <tr class="tr-head">
-      <td>
-        <%= mission.name %>
-      </td>
+        <th>
+          <%= mission.name %>
+        </th>
+        <td>
+        </td>
     </tr>
     <tr class="tr-desc1">
-      <td>
-        <p><%= mission.monster %></p>
-      </td>
-      <td>
-        <p>Weakness: <%= mission.monster_weakness %></p>
-      </td>
-    </tr>
-    <tr class="tr-desc2">
-      <td>Breakable drops:  <%= mission.drop_1 %>
-                            <%= mission.drop_2 %>
-      </td>
+        <td>
+          <%= mission.monster %><br />
+          Weakness: <%= mission.monster_weakness %>
+        </td>
       <td>1: <%= mission.reward_1 %> <br />
           2: <%= mission.reward_2 %> <br />
           3: <%= mission.reward_3 %>
+      </td>
+    </tr>
+<tr class="tr-desc2">
+      <td>  
+      <ul>Breakable drops:
+        <li><%= mission.drop_1 %></li>
+        <li><%= mission.drop_2 %></li>
+      </ul>
+      </td>
+      <td>
       </td>
     </tr>
 </table>

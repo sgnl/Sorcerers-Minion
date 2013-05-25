@@ -4,8 +4,8 @@ require 'csv'
 
 	def self.search(search)
       if search
-      	where('reward_1 ILIKE ? OR reward_2 ILIKE ? OR reward_3 ILIKE ?',
-      							"%#{search}%", "%#{search}%", "%#{search}%")
+      	where('reward_1 ILIKE ? OR reward_2 ILIKE ? OR reward_3 ILIKE ? OR drop_1 ILIKE ? OR drop_2 ILIKE ? OR monster ILIKE ?',
+      							"%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
       else
       	all
       end

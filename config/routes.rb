@@ -11,8 +11,8 @@ SoulSac2::Application.routes.draw do
   end
 
   root to: 'missions#index'
-  match '/contact' => 'portal_pages#contact'
-  match '/update' => 'portal_pages#update'
+  match '/contact'  => 'portal_pages#contact'
+  match '/update'   => 'portal_pages#update'
 
 
   # The priority is based upon order of creation:
