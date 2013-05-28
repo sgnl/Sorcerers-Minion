@@ -43,10 +43,11 @@
                 data: { confirm: 'Are you sure?' } if signed_in? %>
 <p></p>
 <% end.empty? %>
-  <table>
-    <tr>Try searching for an Offering. For Example: "Healing" or "Monsterip". <br />
-        Searches are not case-sensitive. Please pardon the rough edges, Beta!</tr>
-  </table>
+<p>
+  all searches are case insensitive.<br /><br />
+<strong>Search for Soul Essences:</strong> "Unicorn" or "Goblin" (Currently no information in database for "+" or "++").<br />
+<strong>Search for Offerings</strong>: "Flametree Root" or "Monsternip (M)". Breakables are available as well.<br />
+</p>
 <% end %>
 <br />
 <% if signed_in? %>
