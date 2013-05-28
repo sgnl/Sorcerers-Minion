@@ -22,7 +22,9 @@ require 'csv'
 
 	def self.import(file)
 		CSV.foreach(file.path, headers: true) do |row|
-			Mission.create!(row.to_hash)
+			mission = find_by_id(row["id"]) || new
+			mission.attributes = row.to_hash.slice(*accessible_attributes)
+			mission.save
 		end
 	end
 
