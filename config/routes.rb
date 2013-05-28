@@ -15,6 +15,8 @@ SoulSac2::Application.routes.draw do
   match '/update'   => 'portal_pages#update'
   match '/help'     =>  'portal_pages#help'
 
+  match '/*paths' => redirect('/')
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
