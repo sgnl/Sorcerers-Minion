@@ -1,5 +1,11 @@
 @import "bootstrap";
 
+.btn-custom { background-color: hsl(360, 82%, 35%) !important; background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d01414", endColorstr="#a21010"); background-image: -khtml-gradient(linear, left top, left bottom, from(#d01414), to(#a21010)); background-image: -moz-linear-gradient(top, #d01414, #a21010); background-image: -ms-linear-gradient(top, #d01414, #a21010); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d01414), color-stop(100%, #a21010)); background-image: -webkit-linear-gradient(top, #d01414, #a21010); background-image: -o-linear-gradient(top, #d01414, #a21010); background-image: linear-gradient(#d01414, #a21010); border-color: #a21010 #a21010 hsl(360, 82%, 32.5%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.16); -webkit-font-smoothing: antialiased; }
+
+#search {
+  width: 40%;
+}
+
 .mission-detail td {
   padding:           10px;
   border-bottom:     1px solid black;
@@ -96,7 +102,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: white;
+  color: hsl(360, 82%, 35%);
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
