@@ -6,35 +6,34 @@
 <% end %>
 
 <% if @missions.each do |mission| %>
-  <table class="tb-missions">
-    <tr class="tr-head">
-        <th>
-          <%= mission.name %>
-        </th>
-        <td>
-        </td>
+
+<h3><%= mission.name %></h3>
+  <table class="mission-detail">
+    <tr>
+      <td class="row-head">Hunt: </td>
+        <td><%= mission.monster %></td>
     </tr>
-    <tr class="tr-desc1">
-        <td>
-          <%= mission.monster %><br />
-          Weakness: <%= mission.monster_weakness %>
-        </td>
-      <td>1: <%= mission.reward_1 %> <br />
-          2: <%= mission.reward_2 %> <br />
-          3: <%= mission.reward_3 %>
-      </td>
+    <tr>
+        <td class="row-head">Weakness:</td>
+        <td><%= mission.monster_weakness %></td>
     </tr>
-<tr class="tr-desc2">
-      <td>  
-      <ul>Breakable drops:
-        <li><%= mission.drop_1 %></li>
-      </ul>
-      </td>
+    <tr>
+      <td class="row-head">Rewards:</td>
       <td>
-      <ul>Souls:
-        <li><%= mission.drop_2 %></li>
-      </ul>
-      </td>
+      <ol type="i">
+        <li><%= mission.reward_1 %></li>
+        <li><%= mission.reward_2 %></li>
+        <li><%= mission.reward_3 %></li>
+      </ol>
+        </td>
+    </tr>
+    <tr>
+      <td class="row-head">Breakable drops: </td>
+      <td><%= mission.drop_1 %></td>
+    </tr>
+    <tr>
+      <td class="row-head">Souls: </td>
+      <td><%= mission.drop_2 %></td>
     </tr>
 </table>
     <%= link_to 'Show', mission if signed_in? %>
@@ -44,9 +43,11 @@
 <p></p>
 <% end.empty? %>
 <p>
-  all searches are case insensitive.<br /><br />
-<strong>Search for Soul Essences:</strong> "Unicorn" or "Goblin" (Currently no information in database for "+" or "++").<br />
-<strong>Search for Offerings</strong>: "Flametree Root" or "Monsternip (M)". Breakables are available as well.<br />
+    all searches are case insensitive.<br /><br />
+    <strong>Search for Soul Essences:</strong> "Unicorn" or "Goblin" 
+    (Currently no information in database for "+" or "++").<br />
+    <strong>Search for Offerings</strong>: "Flametree Root" or "Monsternip (M)". Breakables are available as well.<br /><p><p>
+    We are missing information still... to help <%= link_to 'Click here', help_path %>
 </p>
 <% end %>
 <br />
@@ -65,3 +66,6 @@
     <% end %>
   </p>
   <% end %>
+<script type="text/javascript">
+$('.mission-detail tr').find('td:eq(1):empty').parent().hide();
+  </script>

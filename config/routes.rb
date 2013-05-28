@@ -13,6 +13,7 @@ SoulSac2::Application.routes.draw do
   root to: 'missions#index'
   match '/contact'  => 'portal_pages#contact'
   match '/update'   => 'portal_pages#update'
+  match '/help'     =>  'portal_pages#help'
 
 
   # The priority is based upon order of creation:

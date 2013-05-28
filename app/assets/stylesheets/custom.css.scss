@@ -1,13 +1,27 @@
 @import "bootstrap";
 
-.tb-missions tr {
-  border-collapse:  collapse;
-  border:           1px solid black;
+.mission-detail td {
+  padding:           10px;
+  border-bottom:     1px solid black;
+  border-top:        1px solid black;
+  border-collapse:   collapse;
+
+  table-layout: fixed;
 }
 
-.tr-desc2 ul {
+.mission-detail ul {
   list-style-type:  none;
   list-style-image: none;
+}
+
+.row-head {
+  text-align: right;
+  width:  115px;
+  border-right-style: solid;
+}
+
+.cell-sizer td{
+  width:  130pxpx;
 }
 
 

@@ -13,4 +13,7 @@ class PortalPagesController < ApplicationController
 
   def update
   end
+
+  def help
+  end
 end
