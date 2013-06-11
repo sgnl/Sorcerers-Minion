@@ -1,6 +1,6 @@
 <%= form_tag missions_path, :method => 'get' do %>
   <p>
-    <%= text_field_tag :search, params[:search] %>
+    <%= search_field_tag :search, params[:search], :placeholder => "try 'Blanket' or 'Illecebra'"%>
     <%= submit_tag "Sacrifice", :name => nil, :class => 'btn-custom' %>
   </p>
 <% end %>
