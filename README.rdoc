@@ -1,7 +1,7 @@
 == Sorcerer's Minion
 
-* link: bit.ly/sorcerersminion
-* link: REDDIT - http://redd.it/1exvqk
+URL: http://bit.ly/sorcerersminion
+REDDIT: http://redd.it/1exvqk
 
 I built this as a way of using the information and skills I learned 
 from the link:http://ruby.railstutorial.org/ by Michael Hartl.
